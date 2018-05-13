@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Harjoitus9-10</string>
+    <string name="mainactivity_myCurrentLocation">My current location</string>
+    <string name="mainactivity_altitude">Altitude:</string>
+    <string name="mainactivity_longitude">Longitude:</string>
+    <string name="mainactivity_latitude">Latitude:</string>
+    <string name="mainactivity_speed">Speed:</string>
+    <string name="mainactivity_bearing">Bearing:</string>
+    <string name="mainactivity_me">Me</string>
+    <string name="mainactivity_followLocationOnMap">Follow my current location on the map</string>
+    <string name="mainactivity_zoomLevel">Zoom level:</string>
+
+    <string name="mainactivity_updateLocation">Update location</string>
 </resources>

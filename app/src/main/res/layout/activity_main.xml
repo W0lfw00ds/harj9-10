@@ -6,13 +6,192 @@
     android:layout_height="match_parent"
     tools:context="com.example.iirol.harjoitus9_10.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- MY CURRENT LOCATION PANEL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/panelPadding"
+                android:layout_margin="@dimen/panelPadding"
+                android:background="@drawable/roundedbox">
+
+                <!-- DETAILS TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/titleFontSize"
+                    android:text="@string/mainactivity_myCurrentLocation"
+                    android:textColor="@color/textColor"
+                    android:paddingBottom="5dip"/>
+
+                <!-- BASIC LOCATION -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingRight="10dip"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mainactivity_altitude"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mainactivity_latitude"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mainactivity_longitude"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mainactivity_bearing"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColor"
+                            android:layout_marginTop="15dip" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mainactivity_speed"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="start">
+
+                        <TextView
+                            android:id="@+id/TextView_altitudeValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0.00°"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:id="@+id/TextView_latitudeValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0.00°"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:id="@+id/TextView_longitudeValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0.00°"
+                            android:textColor="@color/textColor" />
+
+                        <TextView
+                            android:id="@+id/TextView_bearingValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0.00°"
+                            android:textColor="@color/textColor"
+                            android:layout_marginTop="15dip" />
+
+                        <TextView
+                            android:id="@+id/TextView_speedValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0.00°"
+                            android:textColor="@color/textColor" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- MAP -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/panelPadding"
+                android:layout_marginStart="@dimen/panelPadding"
+                android:layout_marginEnd="@dimen/panelPadding"
+                android:layout_marginBottom="@dimen/panelPadding"
+                android:background="@drawable/roundedbox">
+
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/SupportMapFragment_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    tools:context=".MainActivity"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+                <CheckBox android:id="@+id/CheckBox_followLocationOnMap"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/mainactivity_followLocationOnMap"
+                    android:textColor="@color/textColor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mainactivity_zoomLevel"
+                        android:textColor="@color/textColor"/>
+
+                    <SeekBar
+                        android:id="@+id/SeekBar_zoom"
+                        android:max="25"
+                        android:progress="10"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/TextView_zoomValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 %"
+                        android:textColor="@color/textColor"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
